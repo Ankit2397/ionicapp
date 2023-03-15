@@ -12,28 +12,13 @@ form {
     width: 100%;
 }
 
-.Login-btn {
-    margin-top: 10px;
-    background-color: #F8A000;
-    color: #fff;
-    padding: 2px 8px;
-    border-radius: 5px;
-}
-
 .signup-btn {
     margin-top: 10px;
     border: 2px solid #F8A000;
     color: #F8A000;
     padding: 2px 8px;
     border-radius: 5px;
-}
-
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
+    margin: 0px 10px;
 }
 
 .form-txt {
@@ -42,32 +27,10 @@ form {
     color: #F8A000;
 }
 
-.forget-btn {
-    margin: 10px 0px;
-}
-
-.Login-btn:hover {
-    --background-color: #F8A000;
-    --color: #fff;
-}
-
-.forget-btn {
-    padding-left: 15px;
-
-}
-
-.form-btn {
-    text-align: center;
-    margin: 0 auto;
-}
-
 ion-list {
     width: 340px;
 }
 
-ion-label {
-    --font-size: 18px;
-}
 
 ion-item {
     margin-top: 10px;

@@ -6,39 +6,35 @@
 
 <ion-content>
   <div class="wrapper">
+    <h2 class="ion-text-center">Login Form</h2>
     <ion-list>
-      <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
-        <ion-item>
-          <ion-label position="floating">UserName</ion-label>
-          <ion-input formControlName="name" placeholder="Enter text" type="text" required></ion-input>
-        </ion-item>
-        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
-          Name is required.
-        </span>
-        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.minlength">
-          Name should be min 2 chars long.
-        </span>
-        <ion-item>
-          <ion-label position="floating">Email</ion-label>
+      <form [formGroup]="LoginForm" (ngSubmit)="submitForm()" novalidate>
+        <ion-item fill="outline">
+          <ion-label position="stacked">Email</ion-label>
           <ion-input formControlName="email" type="email" placeholder="email@domain.com" required></ion-input>
         </ion-item>
-        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+        <!-- <span class="error ion-padding" *ngIf="isSubmitted && errorControl['email'].errors?.['required']">
           Email is required.
         </span>
-        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['email'].errors?.['pattern']">
           Please provide valid email id.
-        </span>
-        <ion-item>
-          <ion-label position="floating">Password</ion-label>
+        </span> -->
+        <ion-item fill="outline">
+          <ion-label position="stacked">Password</ion-label>
           <ion-input maxlength="10" formControlName="password" type="password" value="password" required></ion-input>
         </ion-item>
-        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+        <!-- <span class="error ion-padding" *ngIf="isSubmitted && errorControl['password'].errors?.['required']">
           Password is required.
         </span>
-        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.pattern">
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['password'].errors?.['pattern']">
           Eight numerical values allowed.
-        </span>
-        <ion-button type="submit" class="Login-btn">Login</ion-button>
+        </span> -->
+        <a class=" ion-margin-vertical forget-btn">Forget Password?</a>
+
+        <ion-buttons class="form-btn">
+          <ion-button type="submit" fill="clear" class="Login-btn">Login</ion-button>
+          <ion-button type="button" fill="clear" class="signup-btn">SignUp</ion-button>
+        </ion-buttons>
 
       </form>
     </ion-list>

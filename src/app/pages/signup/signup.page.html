@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contact Us</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="wrapper">
+    <h2 class="ion-text-center form-txt">SignUp Form</h2>
+    <ion-list>
+      <form [formGroup]="SignupForm" (ngSubmit)="submitForm()" novalidate>
+        <ion-item fill="outline">
+          <ion-label position="stacked">First Name</ion-label>
+          <ion-input formControlName="fname" placeholder="Enter text" type="text" required></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['fname'].errors?.['required']">
+          First Name is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['fname'].errors?.['pattern']">
+          Please provide valid First Name.
+        </span>
+        <ion-item fill="outline">
+          <ion-label position="stacked">Last Name</ion-label>
+          <ion-input formControlName="lname" placeholder="Enter text" type="text" required></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['lname'].errors?.['required']">
+          Last Name is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['lname'].errors?.['pattern']">
+          Please provide valid Last Name.
+        </span>
+        <ion-item fill="outline">
+          <ion-label position="stacked">User Name</ion-label>
+          <ion-input formControlName="uname" placeholder="Enter text" type="text" required></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['uname'].errors?.['required']">
+          User Name is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['uname'].errors?.['pattern']">
+          Please provide valid User Name.
+        </span>
+        <ion-item fill="outline">
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input formControlName="semail" type="email" placeholder="email@domain.com" required></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['semail'].errors?.['required']">
+          Email is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['semail'].errors?.['pattern']">
+          Please provide valid Email.
+        </span>
+        <ion-item fill="outline">
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input formControlName="spassword" maxlength="10" type="password" value="password" required></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['spassword'].errors?.['required']">
+          Password is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['spassword'].errors?.['pattern']">
+          Please provide valid Password.
+        </span>
+        <ion-item fill="outline">
+          <ion-label position="stacked">About Me</ion-label>
+          <ion-textarea formControlName="sabout" maxlength="50"
+            placeholder="Enter text, leave the textarea, come back, and type to clear"
+            [clearOnEdit]="true"></ion-textarea>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['sabout'].errors?.['required']">
+          About is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['sabout'].errors?.['pattern']">
+          Please provide valid About.
+        </span>
+
+
+        <ion-button type="submit" fill="clear" class="signup-btn">SignUp</ion-button>
+
+
+      </form>
+    </ion-list>
+  </div>
+</ion-content>
