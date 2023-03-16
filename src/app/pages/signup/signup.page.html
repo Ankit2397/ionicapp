@@ -60,6 +60,16 @@
           Please provide valid Password.
         </span>
         <ion-item fill="outline">
+          <ion-label position="stacked">Confirm Password</ion-label>
+          <ion-input formControlName="cpassword" maxlength="10" type="password" value="password" required></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['cpassword'].errors?.['required']">
+          Confirm Password is required..
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['cpassword'].errors?.['pattern']">
+          Please provide valid Password..
+        </span>
+        <ion-item fill="outline">
           <ion-label position="stacked">About Me</ion-label>
           <ion-textarea formControlName="sabout" maxlength="50"
             placeholder="Enter text, leave the textarea, come back, and type to clear"

@@ -15,17 +15,17 @@
         </ion-item>
         <!-- <span class="error ion-padding" *ngIf="isSubmitted && errorControl['email'].errors?.['required']">
           Email is required.
-        </span>
+        </span> -->
         <span class="error ion-padding" *ngIf="isSubmitted && errorControl['email'].errors?.['pattern']">
           Please provide valid email id.
-        </span> -->
+        </span>
         <ion-item fill="outline">
           <ion-label position="stacked">Password</ion-label>
           <ion-input maxlength="10" formControlName="password" type="password" value="password" required></ion-input>
         </ion-item>
-        <!-- <span class="error ion-padding" *ngIf="isSubmitted && errorControl['password'].errors?.['required']">
+        <!--  <span class="error ion-padding" *ngIf="isSubmitted && errorControl['password'].errors?.['required']">
           Password is required.
-        </span>
+        </span> 
         <span class="error ion-padding" *ngIf="isSubmitted && errorControl['password'].errors?.['pattern']">
           Eight numerical values allowed.
         </span> -->
@@ -33,7 +33,7 @@
 
         <ion-buttons class="form-btn">
           <ion-button type="submit" fill="clear" class="Login-btn">Login</ion-button>
-          <ion-button type="button" fill="clear" class="signup-btn">SignUp</ion-button>
+          <ion-button type="button" fill="clear" [routerLink]="['/signup']" class=" signup-btn">SignUp</ion-button>
         </ion-buttons>
 
       </form>

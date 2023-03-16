@@ -19,21 +19,37 @@ export class SignupPage implements OnInit {
       uname: ['', [Validators.required, Validators.minLength(2)]],
       sabout: ['', [Validators.required, Validators.minLength(2)]],
       semail: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      spassword: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
+      spassword: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      cpassword: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+
     })
+  }
+  matchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
+    return (Signup: FormGroup) => {
+      let passwordInput = Signup.controls[passwordKey];
+      let passwordConfirmationInput = Signup.controls[passwordConfirmationKey];
+      if (passwordInput.value == passwordConfirmationInput.value) {
+        return alert("password match")
+      }
+      else {
+        alert("passowrd not match")
+      }
+    }
   }
 
   get errorControl() {
     return this.SignupForm.controls;
   }
+
   submitForm() {
     let data = (this.SignupForm.value);
     this.isSubmitted = true;
     if (!this.SignupForm.valid) {
-      console.log('Please provide all the required values!')
+      console.log('Please provide all the required values!!')
       return false;
     } else {
       // console.log(this.SignupForm.value)
+      // const obj = JSON.parse(this.SignupForm.value)
       console.log(data)
     }
     return;
